@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Maison Neue Light';
+    src: url('font/maison-neue-light.ttf');
+}
+
+body {
+   background-color: #fafafa;
+    font-family: "Maison Neue Light", serif;
+}
+
+#navbar {
+    margin-top: 5em;
+    height: 10em;
+}
+
+#logo {
+    color: darkolivegreen;
+}
+
+#title {
+    font-size: 2em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-left: 2.5em;
+}
+
+.nav-link {
+    font-size: 1.3em;
+    color: #6c6d6f;
+    letter-spacing: 0.05em;
+    margin-right: 3em;
+    float: right;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link:link {
+    color: #ddd;
+    text-decoration: none;
+}
+
+
+#about {
+    background: url(img/forest.jpg);
+    background-size: cover;
+    height:60em;
+    padding-top: 7em;
+
+}
+
+.container {
+    width: 66em;
+    margin: 0 auto;
+}
+
+#about h2 {
+    font: 400 6em/1em 'Playfair Display', sans-serif;
+    color: #fff;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: .4em;
+}
+
+#about p {
+    font: 400 1.3em/1.5em 'Quattrocento', sans-serif;
+    color: #fff;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1.2em 0;
+    border-bottom: 0.2em solid #fff;
+    border-top: 0.2em solid #fff;
+}
+
+#projects {
+    height:60em;
+    padding: 9em;
+}
+
+#projects h2 {
+    color: #5e5e5e;
+    text-transform: lowercase;
+    margin-top: 0.5em;
+    letter-spacing: 0.03em;
+    font: 400 5em/1em 'Quattrocento', sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+#projects h2 span {
+    background-color: #fafafa;
+    padding: 0 0.2em;
+    position: relative;
+    z-index: 1;
+}
+
+#projects h2:before {
+    background: #ddd;
+    content: "";
+    display: block;
+    height: 0.02em;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+}
+
+#project-grid {
+    margin-top:7em;
+}
+
+.project-tiles {
+    box-sizing: border-box;
+    text-align: center;
+    height: 10em;
+    border: 1px solid #fafafa;
+    background-color: darkolivegreen;
+}
+
+#tribute {
+    background-image: url('img/weather.jpg');
+}
+
+.center-text {
+    font-family: 'Maison Neue Light', sans-serif;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+}
+

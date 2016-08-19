@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Christopher's Portfolio</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fauna+One|Playfair+Display|Oswald|Quattrocento" rel="stylesheet">
+    <script src="https://use.fontawesome.com/1b56fbce33.js"></script>
+    <script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
+    <link rel="stylesheet" href="index.css" type="text/css">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div id="navbar">
+        <div class="row">
+            <div id="title" class="col-md-4"><i id="logo" class="fa fa-envira" aria-hidden="true"></i> Christopher Li</div>
+            <div id="navigation" class=".col-md-4 .col-md-offset-4" data-bind="foreach: linkList">
+                <a data-bind="attr: {href: href}, css: 'nav-link', text: text"></a>
+
+                <!--
+                <a class="nav-link" href="#">Résumé</a>
+                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#about">About</a>
+                -->
+
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <h2>about me</h2>
+            <p>Hello, my names Christopher and I am currently a web-development student with a goal of becoming a front-end developer. I am a 26-year-old software analyst working at a healthcare software company. My job responsibilities include troubleshooting software issues and working with development to improve our product. Though this is not my preferred line of work, it has taught me a lot about software practices. When I’m not working, I spend a lot of my off time reading up on philosophy, meditating, and weightlifting.  I believe that self-improvement is one of the most important aspects of life and I put a lot of effort into doing so. I also enjoy spending time with friends and occasionally play computer games. Hope you enjoyed reading a little about me! </p>
+        </div>
+    </div>
+
+    <div id="projects">
+        <div class="container">
+            <h2><span>Projects.</span></h2>
+
+            <div id="project-grid">
+                <div class="row" data-bind="foreach: tileList">
+
+                    <div class="project-tiles col-md-3" data-bind="attr: {id: id}"><p data-bind="css: 'center-text', text: text"></p></div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact"></div>
+
+</div>
+
+<script type='text/javascript' src='knockout-3.4.0.js'></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
