@@ -1,59 +1,23 @@
 /**
  * Created by christopherli on 8/19/16.
  */
-var initialLinks = [
-    {href: "#", text: 'Résumé'}, 
-    {href: "#", text: 'Contact'}, 
-    {href: "#", text: 'Projects'},
-    {href: "#", text: 'About'}
-];
 
-var initialTiles = [
-    {id: "tribute", text: "Tribute Page"},
-    {id: "quote", text: "Random Quote"},
-    {id: "weather", text: "Weather App"},
-    {id: "wiki", text: "Wikipedia Viewer"}
-    
-];
+$(document).ready(function(){
 
-/*
-<div id="tribute" class="mid project-tiles col-md-3"><p>Tribute Page</p></div>
-<div id="quote" class="mid project-tiles col-md-3"><p>Random Quote</p></div>
-<a href="#"><div id="weather" class="mid project-tiles col-md-3"><p>Weather App</p></div></a>
-<div id="wiki" class="mid project-tiles col-md-3"><p>Wikipedia Viewer</p></div>
+    $('#project-grid div p').hide();
 
- <div id="twitch" class="mid project-tiles col-md-3">Twitch App</div>
- <div id="calc" class="mid project-tiles col-md-3"><p>Calculator</p></div>
- <div id="clock" class="mid project-tiles col-md-3"><p>Pomodoro Clock</p></div>
- <div id="tic" class="mid project-tiles col-md-3"><p>Tic Tac Toe Game</p></div>
-
-
- <div id="simon" class="mid project-tiles col-md-3"><p>Simon Game</p></div>
-*/
-
-var Link = function(data){
-    this.text = ko.observable(data.text);
-    this.href = ko.observable(data.href);
-};
-
-var Tile = function(data){
-    this.id = ko.observable(data.id);
-    this.text = ko.observable(data.text);
-};
-
-var ViewModel = function(){
-    var self = this;
-    
-    this.linkList = ko.observableArray([]);
-    this.tileList = ko.observableArray([]);
-    
-    initialLinks.forEach(function(linkItem){
-        self.linkList.push(new Link(linkItem));
+    $('#project-grid a > div').hover(function(){
+        $(this).css('background-color', 'black');
+        $(this).find('img').css('opacity', '0.5');
+        $(this).find('p').addClass('show-text').show();
+    }, function(){
+        $(this).css('background-color', 'transparent');
+        $(this).find('p').hide();
+        $(this).find('img').css('opacity', '1');
     });
-    
-    initialTiles.forEach(function(tileItem){
-        self.tileList.push(new Tile(tileItem));
-    });
-};
 
-ko.applyBindings(new ViewModel());
+    var map = new google.maps.Map(document.getElementById('map_canvas'),  { mapTypeId: google.maps.MapTypeId.ROADMAP, center: new google.maps.LatLng(33.6895948,-117.8819877), zoom:15 });
+    var marker = new google.maps.Marker({position: {lat: 33.6895948, lng: -117.8819877}, map: map});
+    marker.setMap(map);
+
+});
